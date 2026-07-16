@@ -2,11 +2,15 @@
 set -euo pipefail
 
 # Cross-platform date → epoch
-if date -d "2020-01-01" "+%s" 2>/dev/null; then
-  to_epoch() { date -d "$1" "+%s" 2>/dev/null || echo "0"; }
-else
-  to_epoch() { date -j -f "%Y-%m-%dT%H:%M:%SZ" "$1" "+%s" 2>/dev/null || echo "0"; }
-fi
+to_epoch() {
+  local ts="${1//T/ }"
+  ts="${ts%Z}"
+  if date -d "2020-01-01" "+%s" >/dev/null 2>&1; then
+    date -d "$ts" "+%s" 2>/dev/null || echo "0"
+  else
+    date -j -f "%Y-%m-%dT%H:%M:%SZ" "$1" "+%s" 2>/dev/null || echo "0"
+  fi
+}
 
 # ── Fetch repos ──
 REPOS=$(gh api user/repos --paginate --jq '.[]' | jq -s '
