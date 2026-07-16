@@ -1,0 +1,31 @@
+name: Update Profile
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate Profile
+        run: bash scripts/generate.sh
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+
+      - name: Commit changes
+        run: |
+          git config user.name "devterminal[bot]"
+          git config user.email "bot@bharathraj.dev"
+          git add README.md assets/lang-bars.svg
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "auto: refresh profile terminal"
+            git push
+          fi
