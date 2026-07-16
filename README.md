@@ -8,7 +8,7 @@
 <br>
 
 <marquee width="88%" direction="left" scrollamount="3" scrolldelay="30">
-  ▶ su-payment-management · 5h ago  │  ▶ admin-dashboard · 5h ago  │  ▶ new_picker_app · 6h ago  │  ▶ BharathrajN2004 · 7h ago  │  ▶ React.3.InqubateQRAdmin · 7h ago  │  ▶ Flutter.4.DomainExpertiser · 7h ago  │  ▶ Flutter.2.1.ExpenseTracker · 7h ago  │  ▶ Tauri.React.Flutter.Al-ML...1.Decoder · 7h ago  │  ▶ React.Flutter.1.Handler · 7h ago  │  ▶ Flutter.IOT.Node.1.WomenSafety · 7h ago
+  ▶ BharathrajN2004 · 20650d ago  │  ▶ su-payment-management · 20650d ago  │  ▶ admin-dashboard · 20650d ago  │  ▶ new_picker_app · 20650d ago  │  ▶ React.3.InqubateQRAdmin · 20650d ago  │  ▶ Flutter.4.DomainExpertiser · 20650d ago  │  ▶ Flutter.2.1.ExpenseTracker · 20650d ago  │  ▶ Tauri.React.Flutter.Al-ML...1.Decoder · 20650d ago  │  ▶ React.Flutter.1.Handler · 20650d ago  │  ▶ Flutter.IOT.Node.1.WomenSafety · 20650d ago
 
 </marquee>
 
@@ -75,7 +75,7 @@ Degrade. Never die. Visibility before velocity.
 SYM    │ PROJECT              │ TECH        │ PRICE │ CHG  │ STAT
 ───────┼──────────────────────┼─────────────┼───────┼──────┼─────
 $FLUTT  │ Flutter.12.RedHat_Ad │ Dart       │ ★ 2   │ ▸ 0  │ 🟣
-$NADAI  │ nadai_app            │ Dart       │ ★ 1   │ ▸ 0  │ 🔵
+$NADAI  │ nadai_app            │ Dart       │ ★ 1   │ ▸ 0  │ 🟣
 $FLUTT  │ Flutter.7.BatteryInd │ Dart       │ ★ 0   │ ▸ 0  │ 🟣
 $QUANT  │ Quantathon_1.0       │ JavaScript │ ★ 0   │ ▸ 0  │ 🟣
 $MISSI  │ Mission_O2           │ Dart       │ ★ 0   │ ▸ 0  │ 🟣
@@ -89,48 +89,104 @@ $PLAYP  │ PlayPal              │ C++        │ ★ 0   │ ▸ 0  │ 🟣
 ```
 🟢 ACTIVE                                  🔵 STABLE                                  🟣 SHIPPED                                
                                                                                                                                       
-│ su-payment-man │ TypeScript  │ today   │ │ scrapuncle_das │ TypeScript  │ 30d ago  │ │ psqlToFirebase │ JavaScript  │ 191d ago  │
-│ admin-dashboar │ TypeScript  │ today   │ │ su-backend     │ Go          │ 35d ago  │ │ su-user-fronte │ TypeScript  │ 250d ago  │
-│ new_picker_app │ Dart        │ today   │ │ nadai_app      │ Dart        │ 43d ago  │ │ coupon-managem │ TypeScript  │ 270d ago  │
-│ BharathrajN200 │ Shell       │ today   │ │ me             │ TypeScript  │ 51d ago  │ │ scrapuncle_adm │ TypeScript  │ 308d ago  │
-│ React.3.Inquba │ JavaScript  │ today   │ │ coupon-dashboa │ TypeScript  │ 77d ago  │ │ su-communicati │ JavaScript  │ 309d ago  │
-│ Flutter.4.Doma │ N/A         │ today   │ │ Scrap_Bot      │ Python      │ 78d ago  │ │ speech-to-text │ Python      │ 330d ago  │
-│ Flutter.2.1.Ex │ N/A         │ today   │ │ Flutter.14.spl │ Dart        │ 102d ago  │ │ SU_Campaign    │ JavaScript  │ 349d ago  │
-│ Tauri.React.Fl │ N/A         │ today   │ │ TShirt_logo_de │ Python      │ 106d ago  │ │ cupon_assign_m │ Jupyter Notebook│ 349d ago  │
-│ React.Flutter. │ N/A         │ today   │ │ Weighing-Machi │ Python      │ 112d ago  │ │ Nodejs_metaFor │ JavaScript  │ 359d ago  │
-│ Flutter.IOT.No │ N/A         │ today   │ │ Anomaly_Detect │ Jupyter Notebook│ 114d ago  │ │ Summary_Model  │ Jupyter Notebook│ 367d ago  │
-│ custom_bottom_ │ N/A         │ today   │ │ su-scripts     │ Python      │ 136d ago  │ │ Gemini_Weight_ │ Jupyter Notebook│ 369d ago  │
-│ LiveInLab-Deco │ JavaScript  │ today   │ │ redirect       │ TypeScript  │ 142d ago  │ │ User_Chatbot   │ Python      │ 370d ago  │
-│ KH002_Splitit  │ Dart        │ today   │ │ su-communicati │ TypeScript  │ 156d ago  │ │ Object_Detect_ │ Python      │ 377d ago  │
-│ Flutter.12.Red │ Dart        │ today   │ │ docs           │ JavaScript  │ 169d ago  │ │ picker_app     │ Dart        │ 384d ago  │
-│ Flutter-Webina │ Dart        │ today   │ │ Psql_to_fireba │ JavaScript  │ 169d ago  │ │ Image_Classify │ Jupyter Notebook│ 385d ago  │
-│ user_managemen │ Dart        │ today   │                                                │ whatsappWorker │ JavaScript  │ 392d ago  │
-│ StudioV_video_ │ Dart        │ today   │                                                │ interakt_api   │ TypeScript  │ 395d ago  │
-│ Microservice_v │ Go          │ today   │                                                │ Address_To_Coo │ N/A         │ 397d ago  │
-│ EJS.1.TeacherV │ EJS         │ today   │                                                │ Flutter.12.Red │ Dart        │ 400d ago  │
-│ React.2.Domain │ JavaScript  │ today   │                                                │ consumer_app   │ Dart        │ 406d ago  │
-│ React.1.Teache │ JavaScript  │ today   │                                                │ awsLambda      │ JavaScript  │ 407d ago  │
-│ student_projec │ Dart        │ today   │                                                │ firebase_rpick │ JavaScript  │ 407d ago  │
-│ nutpam24       │ JavaScript  │ today   │                                                │ routes         │ Python      │ 429d ago  │
-│ Dopeshield     │ Dart        │ today   │                                                │ ws             │ JavaScript  │ 439d ago  │
-│ SIH_avalanche_ │ JavaScript  │ today   │                                                │ scrapuncle_war │ Dart        │ 448d ago  │
-│ Flutter.11.Dro │ N/A         │ today   │                                                │ ORION_server   │ Go          │ 463d ago  │
-│ Flutter.10.SIH │ C++         │ today   │                                                │ ORION_Bun_serv │ TypeScript  │ 469d ago  │
-│ Flutter.9.IC_S │ Dart        │ today   │                                                │ exotel_to_noti │ Python      │ 473d ago  │
-│ Flutter.8.Phot │ C++         │ today   │                                                │ prisma_to_fire │ TypeScript  │ 484d ago  │
-│ Flutter.6.2.Sp │ Dart        │ today   │                                                │ scrapuncle_flu │ C++         │ 490d ago  │
-│ Flutter.6.Spla │ Dart        │ today   │                                                │ ORION_user     │ Dart        │ 515d ago  │
-│ Flutter.5.Inve │ C++         │ today   │                                                │ TEDx-SIT       │ TypeScript  │ 526d ago  │
-│ Flutter.3.Even │ Dart        │ today   │                                                │ Flutter.15.Stu │ Dart        │ 590d ago  │
-│ Flutter.2.2.Ex │ Dart        │ today   │                                                │ Flutter.13.Piw │ C++         │ 643d ago  │
-│ warehouse_app  │ Dart        │ 2d ago  │                                                │ FindWho        │ C++         │ 649d ago  │
-│ Scrapuncle_CS_ │ Dart        │ 2d ago  │                                                │ PlayPal        │ C++         │ 660d ago  │
-│ scrapuncle-loc │ TypeScript  │ 3d ago  │                                                │ pond-quality-s │ JavaScript  │ 674d ago  │
-│ new_consumer_a │ Dart        │ 5d ago  │                                                │ SIH_2024       │ TypeScript  │ 682d ago  │
-│ Scrapuncle_dia │ Dart        │ 14d ago  │                                                │ Mission_O2     │ Dart        │ 777d ago  │
-│ macmonitor     │ Swift       │ 22d ago  │                                                │ Quantathon_1.0 │ JavaScript  │ 1063d ago  │
-│ scrapuncle-pic │ TypeScript  │ 23d ago  │                                                │ Flutter.7.Batt │ Dart        │ 1097d ago  │
-│ ScrapUncle-Mic │ Go          │ 23d ago  │                                                                                             
+                                                                                              │ BharathrajN200 │ Shell       │ 20650d ago  │
+                                                                                              │ su-payment-man │ TypeScript  │ 20650d ago  │
+                                                                                              │ admin-dashboar │ TypeScript  │ 20650d ago  │
+                                                                                              │ new_picker_app │ Dart        │ 20650d ago  │
+                                                                                              │ React.3.Inquba │ JavaScript  │ 20650d ago  │
+                                                                                              │ Flutter.4.Doma │ N/A         │ 20650d ago  │
+                                                                                              │ Flutter.2.1.Ex │ N/A         │ 20650d ago  │
+                                                                                              │ Tauri.React.Fl │ N/A         │ 20650d ago  │
+                                                                                              │ React.Flutter. │ N/A         │ 20650d ago  │
+                                                                                              │ Flutter.IOT.No │ N/A         │ 20650d ago  │
+                                                                                              │ custom_bottom_ │ N/A         │ 20650d ago  │
+                                                                                              │ LiveInLab-Deco │ JavaScript  │ 20650d ago  │
+                                                                                              │ KH002_Splitit  │ Dart        │ 20650d ago  │
+                                                                                              │ Flutter.12.Red │ Dart        │ 20650d ago  │
+                                                                                              │ Flutter-Webina │ Dart        │ 20650d ago  │
+                                                                                              │ user_managemen │ Dart        │ 20650d ago  │
+                                                                                              │ StudioV_video_ │ Dart        │ 20650d ago  │
+                                                                                              │ Microservice_v │ Go          │ 20650d ago  │
+                                                                                              │ EJS.1.TeacherV │ EJS         │ 20650d ago  │
+                                                                                              │ React.2.Domain │ JavaScript  │ 20650d ago  │
+                                                                                              │ React.1.Teache │ JavaScript  │ 20650d ago  │
+                                                                                              │ student_projec │ Dart        │ 20650d ago  │
+                                                                                              │ nutpam24       │ JavaScript  │ 20650d ago  │
+                                                                                              │ Dopeshield     │ Dart        │ 20650d ago  │
+                                                                                              │ SIH_avalanche_ │ JavaScript  │ 20650d ago  │
+                                                                                              │ Flutter.11.Dro │ N/A         │ 20650d ago  │
+                                                                                              │ Flutter.10.SIH │ C++         │ 20650d ago  │
+                                                                                              │ Flutter.9.IC_S │ Dart        │ 20650d ago  │
+                                                                                              │ Flutter.8.Phot │ C++         │ 20650d ago  │
+                                                                                              │ Flutter.6.2.Sp │ Dart        │ 20650d ago  │
+                                                                                              │ Flutter.6.Spla │ Dart        │ 20650d ago  │
+                                                                                              │ Flutter.5.Inve │ C++         │ 20650d ago  │
+                                                                                              │ Flutter.3.Even │ Dart        │ 20650d ago  │
+                                                                                              │ Flutter.2.2.Ex │ Dart        │ 20650d ago  │
+                                                                                              │ warehouse_app  │ Dart        │ 20650d ago  │
+                                                                                              │ Scrapuncle_CS_ │ Dart        │ 20650d ago  │
+                                                                                              │ scrapuncle-loc │ TypeScript  │ 20650d ago  │
+                                                                                              │ new_consumer_a │ Dart        │ 20650d ago  │
+                                                                                              │ Scrapuncle_dia │ Dart        │ 20650d ago  │
+                                                                                              │ macmonitor     │ Swift       │ 20650d ago  │
+                                                                                              │ scrapuncle-pic │ TypeScript  │ 20650d ago  │
+                                                                                              │ ScrapUncle-Mic │ Go          │ 20650d ago  │
+                                                                                              │ scrapuncle_das │ TypeScript  │ 20650d ago  │
+                                                                                              │ su-backend     │ Go          │ 20650d ago  │
+                                                                                              │ nadai_app      │ Dart        │ 20650d ago  │
+                                                                                              │ me             │ TypeScript  │ 20650d ago  │
+                                                                                              │ coupon-dashboa │ TypeScript  │ 20650d ago  │
+                                                                                              │ Scrap_Bot      │ Python      │ 20650d ago  │
+                                                                                              │ Flutter.14.spl │ Dart        │ 20650d ago  │
+                                                                                              │ TShirt_logo_de │ Python      │ 20650d ago  │
+                                                                                              │ Weighing-Machi │ Python      │ 20650d ago  │
+                                                                                              │ Anomaly_Detect │ Jupyter Notebook│ 20650d ago  │
+                                                                                              │ su-scripts     │ Python      │ 20650d ago  │
+                                                                                              │ redirect       │ TypeScript  │ 20650d ago  │
+                                                                                              │ su-communicati │ TypeScript  │ 20650d ago  │
+                                                                                              │ docs           │ JavaScript  │ 20650d ago  │
+                                                                                              │ Psql_to_fireba │ JavaScript  │ 20650d ago  │
+                                                                                              │ psqlToFirebase │ JavaScript  │ 20650d ago  │
+                                                                                              │ su-user-fronte │ TypeScript  │ 20650d ago  │
+                                                                                              │ coupon-managem │ TypeScript  │ 20650d ago  │
+                                                                                              │ scrapuncle_adm │ TypeScript  │ 20650d ago  │
+                                                                                              │ su-communicati │ JavaScript  │ 20650d ago  │
+                                                                                              │ speech-to-text │ Python      │ 20650d ago  │
+                                                                                              │ SU_Campaign    │ JavaScript  │ 20650d ago  │
+                                                                                              │ cupon_assign_m │ Jupyter Notebook│ 20650d ago  │
+                                                                                              │ Nodejs_metaFor │ JavaScript  │ 20650d ago  │
+                                                                                              │ Summary_Model  │ Jupyter Notebook│ 20650d ago  │
+                                                                                              │ Gemini_Weight_ │ Jupyter Notebook│ 20650d ago  │
+                                                                                              │ User_Chatbot   │ Python      │ 20650d ago  │
+                                                                                              │ Object_Detect_ │ Python      │ 20650d ago  │
+                                                                                              │ picker_app     │ Dart        │ 20650d ago  │
+                                                                                              │ Image_Classify │ Jupyter Notebook│ 20650d ago  │
+                                                                                              │ whatsappWorker │ JavaScript  │ 20650d ago  │
+                                                                                              │ interakt_api   │ TypeScript  │ 20650d ago  │
+                                                                                              │ Address_To_Coo │ N/A         │ 20650d ago  │
+                                                                                              │ Flutter.12.Red │ Dart        │ 20650d ago  │
+                                                                                              │ consumer_app   │ Dart        │ 20650d ago  │
+                                                                                              │ awsLambda      │ JavaScript  │ 20650d ago  │
+                                                                                              │ firebase_rpick │ JavaScript  │ 20650d ago  │
+                                                                                              │ routes         │ Python      │ 20650d ago  │
+                                                                                              │ ws             │ JavaScript  │ 20650d ago  │
+                                                                                              │ scrapuncle_war │ Dart        │ 20650d ago  │
+                                                                                              │ ORION_server   │ Go          │ 20650d ago  │
+                                                                                              │ ORION_Bun_serv │ TypeScript  │ 20650d ago  │
+                                                                                              │ exotel_to_noti │ Python      │ 20650d ago  │
+                                                                                              │ prisma_to_fire │ TypeScript  │ 20650d ago  │
+                                                                                              │ scrapuncle_flu │ C++         │ 20650d ago  │
+                                                                                              │ ORION_user     │ Dart        │ 20650d ago  │
+                                                                                              │ TEDx-SIT       │ TypeScript  │ 20650d ago  │
+                                                                                              │ Flutter.15.Stu │ Dart        │ 20650d ago  │
+                                                                                              │ Flutter.13.Piw │ C++         │ 20650d ago  │
+                                                                                              │ FindWho        │ C++         │ 20650d ago  │
+                                                                                              │ PlayPal        │ C++         │ 20650d ago  │
+                                                                                              │ pond-quality-s │ JavaScript  │ 20650d ago  │
+                                                                                              │ SIH_2024       │ TypeScript  │ 20650d ago  │
+                                                                                              │ Mission_O2     │ Dart        │ 20650d ago  │
+                                                                                              │ Quantathon_1.0 │ JavaScript  │ 20650d ago  │
+                                                                                              │ Flutter.7.Batt │ Dart        │ 20650d ago  │
 ```
 
 </details>
@@ -184,7 +240,7 @@ $PLAYP  │ PlayPal              │ C++        │ ★ 0   │ ▸ 0  │ 🟣
 ```
 
 ```
-$ █  [synced: 16 Jul 2026 10:29 UTC]
+$ █  [synced: 16 Jul 2026 10:32 UTC]
 ```
 
 </div>
