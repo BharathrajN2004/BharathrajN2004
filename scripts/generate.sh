@@ -1,6 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
+# Cross-platform date → epoch
+if date -d "2020-01-01" "+%s" 2>/dev/null; then
+  to_epoch() { date -d "$1" "+%s" 2>/dev/null || echo "0"; }
+else
+  to_epoch() { date -j -f "%Y-%m-%dT%H:%M:%SZ" "$1" "+%s" 2>/dev/null || echo "0"; }
+fi
+
 # ── Fetch repos ──
 REPOS=$(gh api user/repos --paginate --jq '.[]' | jq -s '
   sort_by(.updated_at) | reverse |
@@ -64,7 +71,7 @@ SVGEOF
 
 # ── Ticker ──
 TICKER=$(echo "$REPOS" | jq -r '.[:10] | .[] | "\(.name)|\(.updated_at)"' | while IFS='|' read -r name updated; do
-  ts=$(date -j -f "%Y-%m-%dT%H:%M:%SZ" "$updated" "+%s" 2>/dev/null || echo 0)
+  ts=$(to_epoch "$updated")
   now=$(date "+%s")
   diff=$(( (now - ts) / 3600 ))
   if [ "$diff" -lt 1 ]; then ago="just now"
@@ -80,7 +87,7 @@ MARKET=$(echo "$REPOS" | jq -r '
   "\(.name)|\(.language // "N/A")|\(.stargazers_count)|\(.updated_at)"
 ' | while IFS='|' read -r name lang stars updated; do
   sym="\$"$(echo "$name" | head -c 5 | tr '[:lower:]' '[:upper:]')
-  ts=$(date -j -f "%Y-%m-%dT%H:%M:%SZ" "$updated" "+%s" 2>/dev/null || echo 0)
+  ts=$(to_epoch "$updated")
   days=$(( ( $(date "+%s") - ts ) / 86400 ))
   if [ "$days" -lt 30 ]; then stat="🟢"
   elif [ "$days" -lt 180 ]; then stat="🔵"
@@ -91,7 +98,7 @@ done)
 # ── Kanban ──
 ACTIVE=""; STABLE=""; SHIPPED=""
 while IFS='|' read -r name lang updated; do
-  ts=$(date -j -f "%Y-%m-%dT%H:%M:%SZ" "$updated" "+%s" 2>/dev/null || echo 0)
+  ts=$(to_epoch "$updated")
   days=$(( ( $(date "+%s") - ts ) / 86400 ))
   n=$(printf "%-15s" "${name:0:14}")
   l=$(printf "%-12s" "${lang:-N/A}")
