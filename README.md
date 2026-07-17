@@ -8,7 +8,7 @@
 <br>
 
 <marquee width="88%" direction="left" scrollamount="3" scrolldelay="30">
-  ▶ BharathrajN2004 · 7h ago  │  ▶ su-payment-management · 16h ago  │  ▶ admin-dashboard · 16h ago  │  ▶ new_picker_app · 16h ago  │  ▶ React.3.InqubateQRAdmin · 18h ago  │  ▶ Flutter.4.DomainExpertiser · 18h ago  │  ▶ Flutter.2.1.ExpenseTracker · 18h ago  │  ▶ Tauri.React.Flutter.Al-ML...1.Decoder · 18h ago  │  ▶ React.Flutter.1.Handler · 18h ago  │  ▶ Flutter.IOT.Node.1.WomenSafety · 18h ago
+  ▶ BharathrajN2004 · 5h ago  │  ▶ su-payment-management · 22h ago  │  ▶ admin-dashboard · 22h ago  │  ▶ new_picker_app · 22h ago  │  ▶ React.3.InqubateQRAdmin · 23h ago  │  ▶ Flutter.4.DomainExpertiser · 23h ago  │  ▶ Flutter.2.1.ExpenseTracker · 23h ago  │  ▶ Tauri.React.Flutter.Al-ML...1.Decoder · 23h ago  │  ▶ React.Flutter.1.Handler · 23h ago  │  ▶ Flutter.IOT.Node.1.WomenSafety · 23h ago
 
 </marquee>
 
@@ -94,8 +94,8 @@ $PLAYP  │ PlayPal              │ C++        │ ★ 0   │ ▸ 0  │ 🟣
 │ admin-dashboar │ TypeScript  │ today   │ │ nadai_app      │ Dart        │ 44d ago  │ │ coupon-managem │ TypeScript  │ 270d ago  │
 │ new_picker_app │ Dart        │ today   │ │ me             │ TypeScript  │ 52d ago  │ │ scrapuncle_adm │ TypeScript  │ 308d ago  │
 │ React.3.Inquba │ JavaScript  │ today   │ │ coupon-dashboa │ TypeScript  │ 78d ago  │ │ su-communicati │ JavaScript  │ 309d ago  │
-│ Flutter.4.Doma │ N/A         │ today   │ │ Scrap_Bot      │ Python      │ 78d ago  │ │ speech-to-text │ Python      │ 330d ago  │
-│ Flutter.2.1.Ex │ N/A         │ today   │ │ Flutter.14.spl │ Dart        │ 102d ago  │ │ SU_Campaign    │ JavaScript  │ 349d ago  │
+│ Flutter.4.Doma │ N/A         │ today   │ │ Scrap_Bot      │ Python      │ 79d ago  │ │ speech-to-text │ Python      │ 331d ago  │
+│ Flutter.2.1.Ex │ N/A         │ today   │ │ Flutter.14.spl │ Dart        │ 102d ago  │ │ SU_Campaign    │ JavaScript  │ 350d ago  │
 │ Tauri.React.Fl │ N/A         │ today   │ │ TShirt_logo_de │ Python      │ 106d ago  │ │ cupon_assign_m │ Jupyter Notebook│ 350d ago  │
 │ React.Flutter. │ N/A         │ today   │ │ Weighing-Machi │ Python      │ 112d ago  │ │ Nodejs_metaFor │ JavaScript  │ 359d ago  │
 │ Flutter.IOT.No │ N/A         │ today   │ │ Anomaly_Detect │ Jupyter Notebook│ 114d ago  │ │ Summary_Model  │ Jupyter Notebook│ 367d ago  │
@@ -103,34 +103,34 @@ $PLAYP  │ PlayPal              │ C++        │ ★ 0   │ ▸ 0  │ 🟣
 │ LiveInLab-Deco │ JavaScript  │ today   │ │ redirect       │ TypeScript  │ 142d ago  │ │ User_Chatbot   │ Python      │ 370d ago  │
 │ KH002_Splitit  │ Dart        │ today   │ │ su-communicati │ TypeScript  │ 156d ago  │ │ Object_Detect_ │ Python      │ 377d ago  │
 │ Flutter.12.Red │ Dart        │ today   │ │ docs           │ JavaScript  │ 169d ago  │ │ picker_app     │ Dart        │ 385d ago  │
-│ Flutter-Webina │ Dart        │ today   │ │ Psql_to_fireba │ JavaScript  │ 169d ago  │ │ Image_Classify │ Jupyter Notebook│ 385d ago  │
+│ Flutter-Webina │ Dart        │ today   │ │ Psql_to_fireba │ JavaScript  │ 169d ago  │ │ Image_Classify │ Jupyter Notebook│ 386d ago  │
 │ user_managemen │ Dart        │ today   │                                                │ whatsappWorker │ JavaScript  │ 392d ago  │
 │ StudioV_video_ │ Dart        │ today   │                                                │ interakt_api   │ TypeScript  │ 395d ago  │
-│ Microservice_v │ Go          │ today   │                                                │ Address_To_Coo │ N/A         │ 397d ago  │
-│ EJS.1.TeacherV │ EJS         │ today   │                                                │ Flutter.12.Red │ Dart        │ 400d ago  │
-│ React.2.Domain │ JavaScript  │ today   │                                                │ consumer_app   │ Dart        │ 406d ago  │
-│ React.1.Teache │ JavaScript  │ today   │                                                │ awsLambda      │ JavaScript  │ 408d ago  │
-│ student_projec │ Dart        │ today   │                                                │ firebase_rpick │ JavaScript  │ 408d ago  │
-│ nutpam24       │ JavaScript  │ today   │                                                │ routes         │ Python      │ 429d ago  │
-│ Dopeshield     │ Dart        │ today   │                                                │ ws             │ JavaScript  │ 439d ago  │
-│ SIH_avalanche_ │ JavaScript  │ today   │                                                │ scrapuncle_war │ Dart        │ 448d ago  │
-│ Flutter.11.Dro │ N/A         │ today   │                                                │ ORION_server   │ Go          │ 464d ago  │
-│ Flutter.10.SIH │ C++         │ today   │                                                │ ORION_Bun_serv │ TypeScript  │ 469d ago  │
-│ Flutter.9.IC_S │ Dart        │ today   │                                                │ exotel_to_noti │ Python      │ 474d ago  │
-│ Flutter.8.Phot │ C++         │ today   │                                                │ prisma_to_fire │ TypeScript  │ 484d ago  │
-│ Flutter.6.2.Sp │ Dart        │ today   │                                                │ scrapuncle_flu │ C++         │ 490d ago  │
-│ Flutter.6.Spla │ Dart        │ today   │                                                │ ORION_user     │ Dart        │ 515d ago  │
-│ Flutter.5.Inve │ C++         │ today   │                                                │ TEDx-SIT       │ TypeScript  │ 526d ago  │
-│ Flutter.3.Even │ Dart        │ today   │                                                │ Flutter.15.Stu │ Dart        │ 590d ago  │
-│ Flutter.2.2.Ex │ Dart        │ today   │                                                │ Flutter.13.Piw │ C++         │ 643d ago  │
+│ Microservice_v │ Go          │ today   │                                                │ Address_To_Coo │ N/A         │ 398d ago  │
+│ EJS.1.TeacherV │ EJS         │ 1d ago  │                                                │ Flutter.12.Red │ Dart        │ 400d ago  │
+│ React.2.Domain │ JavaScript  │ 1d ago  │                                                │ consumer_app   │ Dart        │ 406d ago  │
+│ React.1.Teache │ JavaScript  │ 1d ago  │                                                │ awsLambda      │ JavaScript  │ 408d ago  │
+│ student_projec │ Dart        │ 1d ago  │                                                │ firebase_rpick │ JavaScript  │ 408d ago  │
+│ nutpam24       │ JavaScript  │ 1d ago  │                                                │ routes         │ Python      │ 430d ago  │
+│ Dopeshield     │ Dart        │ 1d ago  │                                                │ ws             │ JavaScript  │ 440d ago  │
+│ SIH_avalanche_ │ JavaScript  │ 1d ago  │                                                │ scrapuncle_war │ Dart        │ 448d ago  │
+│ Flutter.11.Dro │ N/A         │ 1d ago  │                                                │ ORION_server   │ Go          │ 464d ago  │
+│ Flutter.10.SIH │ C++         │ 1d ago  │                                                │ ORION_Bun_serv │ TypeScript  │ 470d ago  │
+│ Flutter.9.IC_S │ Dart        │ 1d ago  │                                                │ exotel_to_noti │ Python      │ 474d ago  │
+│ Flutter.8.Phot │ C++         │ 1d ago  │                                                │ prisma_to_fire │ TypeScript  │ 485d ago  │
+│ Flutter.6.2.Sp │ Dart        │ 1d ago  │                                                │ scrapuncle_flu │ C++         │ 490d ago  │
+│ Flutter.6.Spla │ Dart        │ 1d ago  │                                                │ ORION_user     │ Dart        │ 516d ago  │
+│ Flutter.5.Inve │ C++         │ 1d ago  │                                                │ TEDx-SIT       │ TypeScript  │ 526d ago  │
+│ Flutter.3.Even │ Dart        │ 1d ago  │                                                │ Flutter.15.Stu │ Dart        │ 590d ago  │
+│ Flutter.2.2.Ex │ Dart        │ 1d ago  │                                                │ Flutter.13.Piw │ C++         │ 643d ago  │
 │ warehouse_app  │ Dart        │ 2d ago  │                                                │ FindWho        │ C++         │ 649d ago  │
 │ Scrapuncle_CS_ │ Dart        │ 2d ago  │                                                │ PlayPal        │ C++         │ 661d ago  │
-│ scrapuncle-loc │ TypeScript  │ 3d ago  │                                                │ pond-quality-s │ JavaScript  │ 674d ago  │
-│ new_consumer_a │ Dart        │ 5d ago  │                                                │ SIH_2024       │ TypeScript  │ 683d ago  │
-│ Scrapuncle_dia │ Dart        │ 14d ago  │                                                │ Mission_O2     │ Dart        │ 777d ago  │
+│ scrapuncle-loc │ TypeScript  │ 4d ago  │                                                │ pond-quality-s │ JavaScript  │ 674d ago  │
+│ new_consumer_a │ Dart        │ 6d ago  │                                                │ SIH_2024       │ TypeScript  │ 683d ago  │
+│ Scrapuncle_dia │ Dart        │ 14d ago  │                                                │ Mission_O2     │ Dart        │ 778d ago  │
 │ macmonitor     │ Swift       │ 23d ago  │                                                │ Quantathon_1.0 │ JavaScript  │ 1063d ago  │
-│ scrapuncle-pic │ TypeScript  │ 23d ago  │                                                │ Flutter.7.Batt │ Dart        │ 1097d ago  │
-│ ScrapUncle-Mic │ Go          │ 23d ago  │                                                                                             
+│ scrapuncle-pic │ TypeScript  │ 24d ago  │                                                │ Flutter.7.Batt │ Dart        │ 1098d ago  │
+│ ScrapUncle-Mic │ Go          │ 24d ago  │                                                                                             
 ```
 
 </details>
@@ -184,7 +184,7 @@ $PLAYP  │ PlayPal              │ C++        │ ★ 0   │ ▸ 0  │ 🟣
 ```
 
 ```
-$ █  [synced: 17 Jul 2026 02:44 UTC]
+$ █  [synced: 17 Jul 2026 08:11 UTC]
 ```
 
 </div>
