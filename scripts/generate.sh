@@ -14,13 +14,15 @@ done | sed 's/  │  $//')
 SYNC_TIME=$(date -u "+%d %b %Y")
 
 # ── Ticker SVG (real scrolling animation — GitHub strips <marquee> entirely) ──
+# Intrinsic size matches the display width exactly (560) so the <img> tag never
+# has to scale it down — that scaling is what was shrinking the text before.
 TICKER_ESC=$(echo "$TICKER" | sed 's/&/\&amp;/g')
 cat > assets/ticker.svg << SVGEOF2
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 24" width="900" height="24">
-  <rect width="900" height="24" fill="#0d1117"/>
-  <text x="900" y="17" font-family="Courier New,monospace" font-size="12" fill="#8b949e">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 32" width="560" height="32">
+  <rect width="560" height="32" fill="#0d1117"/>
+  <text x="560" y="22" font-family="Courier New,monospace" font-size="16" fill="#8b949e">
     ${TICKER_ESC}
-    <animate attributeName="x" from="900" to="-1800" dur="26s" repeatCount="indefinite"/>
+    <animate attributeName="x" from="560" to="-1600" dur="26s" repeatCount="indefinite"/>
   </text>
 </svg>
 SVGEOF2
@@ -77,24 +79,29 @@ cat > assets/header.svg << 'SVGEOF'
 SVGEOF
 
 # ── Systems Composition SVG (hand-curated ranking, not raw repo byte-count) ──
+# Legend rows use dominant-baseline="central" on both the dot and the text so they
+# share one true vertical center-line, instead of hand-computed baseline offsets.
 cat > assets/lang-panel.svg << 'SVGEOF'
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 60" width="560" height="60">
-  <rect x="0" y="0" width="560" height="14" rx="7" fill="#161b22"/>
-  <rect x="0" y="0" width="134" height="14" rx="7" fill="#00B4AB"><animate attributeName="width" from="0" to="134" dur="0.8s" begin="0s" fill="freeze"/></rect>
-  <rect x="134" y="0" width="112" height="14" fill="#00ADD8"><animate attributeName="width" from="0" to="112" dur="0.8s" begin="0.1s" fill="freeze"/></rect>
-  <rect x="246" y="0" width="95" height="14" fill="#3178C6"><animate attributeName="width" from="0" to="95" dur="0.8s" begin="0.2s" fill="freeze"/></rect>
-  <rect x="341" y="0" width="78" height="14" fill="#7F52FF"><animate attributeName="width" from="0" to="78" dur="0.8s" begin="0.3s" fill="freeze"/></rect>
-  <rect x="419" y="0" width="62" height="14" fill="#F05138"><animate attributeName="width" from="0" to="62" dur="0.8s" begin="0.4s" fill="freeze"/></rect>
-  <rect x="481" y="0" width="50" height="14" fill="#00599C"><animate attributeName="width" from="0" to="50" dur="0.8s" begin="0.5s" fill="freeze"/></rect>
-  <rect x="531" y="0" width="29" height="14" rx="7" fill="#3776AB"><animate attributeName="width" from="0" to="29" dur="0.8s" begin="0.6s" fill="freeze"/></rect>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 88" width="560" height="88">
+  <rect x="0" y="0" width="560" height="16" rx="8" fill="#161b22"/>
+  <rect x="0" y="0" width="134" height="16" rx="8" fill="#00B4AB"><animate attributeName="width" from="0" to="134" dur="0.8s" begin="0s" fill="freeze"/></rect>
+  <rect x="134" y="0" width="112" height="16" fill="#00ADD8"><animate attributeName="width" from="0" to="112" dur="0.8s" begin="0.1s" fill="freeze"/></rect>
+  <rect x="246" y="0" width="95" height="16" fill="#3178C6"><animate attributeName="width" from="0" to="95" dur="0.8s" begin="0.2s" fill="freeze"/></rect>
+  <rect x="341" y="0" width="78" height="16" fill="#7F52FF"><animate attributeName="width" from="0" to="78" dur="0.8s" begin="0.3s" fill="freeze"/></rect>
+  <rect x="419" y="0" width="62" height="16" fill="#F05138"><animate attributeName="width" from="0" to="62" dur="0.8s" begin="0.4s" fill="freeze"/></rect>
+  <rect x="481" y="0" width="50" height="16" fill="#00599C"><animate attributeName="width" from="0" to="50" dur="0.8s" begin="0.5s" fill="freeze"/></rect>
+  <rect x="531" y="0" width="29" height="16" rx="8" fill="#3776AB"><animate attributeName="width" from="0" to="29" dur="0.8s" begin="0.6s" fill="freeze"/></rect>
 
-  <circle cx="8" cy="38" r="4" fill="#00B4AB"/><text x="17" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Dart</text><text x="47" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">24%</text>
-  <circle cx="90" cy="38" r="4" fill="#00ADD8"/><text x="99" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Go</text><text x="118" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">20%</text>
-  <circle cx="160" cy="38" r="4" fill="#3178C6"/><text x="169" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">TypeScript</text><text x="240" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">17%</text>
-  <circle cx="290" cy="38" r="4" fill="#7F52FF"/><text x="299" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Kotlin</text><text x="345" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">14%</text>
-  <circle cx="390" cy="38" r="4" fill="#F05138"/><text x="399" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Swift</text><text x="435" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">11%</text>
-  <circle cx="8" cy="56" r="4" fill="#00599C"/><text x="17" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">C++</text><text x="45" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">9%</text>
-  <circle cx="90" cy="56" r="4" fill="#3776AB"/><text x="99" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Python</text><text x="145" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">5%</text>
+  <g font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" dominant-baseline="central">
+    <circle cx="10" cy="42" r="5" fill="#00B4AB" dominant-baseline="central"/><text x="21" y="42" fill="#e6e8eb" font-weight="600">Dart</text><text x="56" y="42" fill="#6e7681">24%</text>
+    <circle cx="100" cy="42" r="5" fill="#00ADD8" dominant-baseline="central"/><text x="111" y="42" fill="#e6e8eb" font-weight="600">Go</text><text x="133" y="42" fill="#6e7681">20%</text>
+    <circle cx="178" cy="42" r="5" fill="#3178C6" dominant-baseline="central"/><text x="189" y="42" fill="#e6e8eb" font-weight="600">TypeScript</text><text x="266" y="42" fill="#6e7681">17%</text>
+    <circle cx="320" cy="42" r="5" fill="#7F52FF" dominant-baseline="central"/><text x="331" y="42" fill="#e6e8eb" font-weight="600">Kotlin</text><text x="381" y="42" fill="#6e7681">14%</text>
+    <circle cx="430" cy="42" r="5" fill="#F05138" dominant-baseline="central"/><text x="441" y="42" fill="#e6e8eb" font-weight="600">Swift</text><text x="480" y="42" fill="#6e7681">11%</text>
+
+    <circle cx="10" cy="72" r="5" fill="#00599C" dominant-baseline="central"/><text x="21" y="72" fill="#e6e8eb" font-weight="600">C++</text><text x="58" y="72" fill="#6e7681">9%</text>
+    <circle cx="100" cy="72" r="5" fill="#3776AB" dominant-baseline="central"/><text x="111" y="72" fill="#e6e8eb" font-weight="600">Python</text><text x="163" y="72" fill="#6e7681">5%</text>
+  </g>
 </svg>
 SVGEOF
 
@@ -224,11 +231,7 @@ Grouped by where it ships — each tool listed once.
 
 ---
 
-\`\`\`
-📧  bharathrajn2004@gmail.com
-🐙  github.com/BharathrajN2004
-💼  linkedin.com/in/bharathraj-n
-\`\`\`
+📧 [bharathrajn2004@gmail.com](mailto:bharathrajn2004@gmail.com) &nbsp;&nbsp;│&nbsp;&nbsp; 🐙 [github.com/BharathrajN2004](https://github.com/BharathrajN2004) &nbsp;&nbsp;│&nbsp;&nbsp; 💼 [linkedin.com/in/bharathraj-n](https://linkedin.com/in/bharathraj-n)
 
 \`\$ █  [synced: ${SYNC_TIME}]\`
 
