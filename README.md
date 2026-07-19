@@ -9,9 +9,10 @@
 
 <sub><b>TELEMETRY FEED</b></sub>
 
-<marquee width="88%" direction="left" scrollamount="3" scrolldelay="30">
-  ▶ BharathrajN2004  │  ▶ microservices-lab  │  ▶ inventory-qr-manager  │  ▶ aqi-wqi-monitor  │  ▶ pond-water-quality-monitor-lite  │  ▶ decoder-app-platform  │  ▶ expense-tracker-bewise  │  ▶ event-pod  │  ▶ student-permission-tracker  │  ▶ attendance-validator
-</marquee>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/ticker.svg">
+  <img src="assets/ticker.svg" width="560" alt="Recent activity ticker">
+</picture>
 
 ---
 
@@ -61,14 +62,6 @@ What I reach for most, in order.
   <source media="(prefers-color-scheme: dark)" srcset="assets/lang-panel.svg">
   <img src="assets/lang-panel.svg" width="560" alt="Systems Composition">
 </picture>
-
-<br>
-
-![Stats](https://github-readme-stats.vercel.app/api?username=BharathrajN2004&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&icon_color=58a6ff&text_color=c9d1d9&title_color=58a6ff&hide=stars\&hide_rank=true\&include_all_commits=true\&count_private=true)
-
-<br>
-
-![Activity](https://github-readme-activity-graph.vercel.app/graph?username=BharathrajN2004&theme=react-dark&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&hide_border=true&area=true)
 
 ---
 

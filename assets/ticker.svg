@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 24" width="900" height="24">
+  <rect width="900" height="24" fill="#0d1117"/>
+  <text x="900" y="17" font-family="Courier New,monospace" font-size="12" fill="#8b949e">
+    ▶ BharathrajN2004  │  ▶ microservices-lab  │  ▶ inventory-qr-manager  │  ▶ aqi-wqi-monitor  │  ▶ pond-water-quality-monitor-lite  │  ▶ decoder-app-platform  │  ▶ expense-tracker-bewise  │  ▶ event-pod  │  ▶ student-permission-tracker  │  ▶ attendance-validator
+    <animate attributeName="x" from="900" to="-1800" dur="26s" repeatCount="indefinite"/>
+  </text>
+</svg>
