@@ -204,15 +204,16 @@ Grouped by where it ships — each tool listed once.
 
 <br>
 
-**Flutter** — Riverpod • Bloc • MVVM • ObjectBox • Drift • Hive • Retrofit • Dio
+**Flutter** — Riverpod • Bloc • ObjectBox • Drift • Retrofit
 
-**Backend** — Go (Fiber) • Node.js (Express) • Bun • PostgreSQL (Ent) • MongoDB • NATS JetStream • gRPC • JWT
+**Backend** — Fiber • Express • Ent ORM • NATS JetStream • gRPC • JWT • WSS • SSE • Pub/Sub
 
-**Frontend** — React • Next.js • Tailwind CSS • Redux Toolkit • Framer Motion • Three.js
+**Frontend** — Tailwind CSS • Redux Toolkit • Framer Motion • Three.js • React Query
 
-**Cloud & DevOps** — Firebase • Supabase • GCP • AWS • Docker • Kubernetes • Helm • Terraform
+**Cloud** — GKE • Istio • Envoy • Helm • Terraform • GitHub Actions
 
-**Observability** — Grafana • PostHog • Sentry • Mixpanel
+**Agentic** — OpenCode • OpenHands • Claude Code
+<br><sub>→ Continuously experimenting with state-of-the-art AI models, coding agents, and autonomous developer workflows to transform ideas into production-ready software with greater speed, quality, and engineering efficiency.</sub>
 
 </details>
 
