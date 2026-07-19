@@ -1,128 +1,93 @@
 #!/bin/bash
 set -euo pipefail
 
-# Cross-platform date → epoch
-to_epoch() {
-  local ts="${1//T/ }"
-  ts="${ts%Z}"
-  if date -d "2020-01-01" "+%s" >/dev/null 2>&1; then
-    date -d "$ts" "+%s" 2>/dev/null || echo "0"
-  else
-    date -j -f "%Y-%m-%dT%H:%M:%SZ" "$1" "+%s" 2>/dev/null || echo "0"
-  fi
-}
-
-# ── Fetch repos ──
+# ── Live: recent activity ticker ──
 REPOS=$(gh api user/repos --paginate --jq '.[]' | jq -s '
   sort_by(.updated_at) | reverse |
-  [.[] | select(.fork == false and .archived == false and .is_template == false) |
-  {name,description,language,visibility,updated_at,stargazers_count,forks_count}]
+  [.[] | select(.fork == false and .archived == false and .is_template == false) | .name]
 ')
 
-COUNT=$(echo "$REPOS" | jq 'length')
+TICKER=$(echo "$REPOS" | jq -r '.[:10] | .[]' | while read -r name; do
+  printf '▶ %s  │  ' "$name"
+done | sed 's/  │  $//')
 
-# ── Language distribution ──
-LANG_RAW=$(echo "$REPOS" | jq -r '
-  [.[] | select(.language != null) | .language] |
-  group_by(.) | map({lang: .[0], count: length}) |
-  sort_by(-.count) | .[:6] | .[] | "\(.lang)|\(.count)"
-')
+SYNC_TIME=$(date -u "+%d %b %Y")
 
-TOTAL_LANG=$(echo "$LANG_RAW" | awk -F'|' '{s+=$2} END{print s+0}')
-[[ "$TOTAL_LANG" -eq 0 ]] && TOTAL_LANG=1
+# ── Header SVG ──
+cat > assets/header.svg << 'SVGEOF'
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 168" width="620" height="168">
+  <rect width="620" height="168" fill="#0d1117" rx="6"/>
 
-# ── Generate language bars SVG ──
-Y=26
-BARS=""
+  <g transform="translate(18,22)">
+    <circle cx="12" cy="10" r="7" fill="none" stroke="#58a6ff" stroke-width="1.5">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0s" fill="freeze"/>
+    </circle>
+    <path d="M2 28 Q12 18 22 28" fill="none" stroke="#58a6ff" stroke-width="1.5">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0s" fill="freeze"/>
+    </path>
+  </g>
 
-get_color() {
-  case "$1" in
-    Dart) echo "#00B4AB" ;; Go) echo "#00ADD8" ;;
-    TypeScript) echo "#3178C6" ;; JavaScript) echo "#F7DF1E" ;;
-    Swift) echo "#F05138" ;; Python) echo "#3776AB" ;;
-    "C++") echo "#00599C" ;; EJS) echo "#B52E31" ;;
-    CSS) echo "#663399" ;; *) echo "#8b949e" ;;
-  esac
-}
+  <text x="52" y="34" font-family="Courier New,monospace" font-size="12" fill="#8b949e" opacity="0">
+    BharathrajN2004@github
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.3s" fill="freeze"/>
+  </text>
 
-i=0
-while IFS='|' read -r lang count; do
-  pct=$(( count * 100 / TOTAL_LANG ))
-  w=$(( count * 380 / TOTAL_LANG ))
-  [[ "$w" -lt 4 ]] && w=4
-  color=$(get_color "$lang")
-  BARS+=$'\n'"    <text x=\"10\" y=\"$((Y+14))\" font-family=\"Courier New,monospace\" font-size=\"11\" fill=\"#c9d1d9\">$lang</text>"
-  BARS+=$'\n'"    <rect x=\"120\" y=\"$((Y+3))\" width=\"$w\" height=\"14\" rx=\"3\" fill=\"$color\" opacity=\"0.9\">"
-  BARS+=$'\n'"      <animate attributeName=\"width\" from=\"0\" to=\"$w\" dur=\"1s\" begin=\"$((i * 15 / 10)).$((i * 15 % 10))s\" fill=\"freeze\"/>"
-  BARS+=$'\n'"    </rect>"
-  BARS+=$'\n'"    <text x=\"$((120 + w + 8))\" y=\"$((Y+14))\" font-family=\"Courier New,monospace\" font-size=\"9\" fill=\"#8b949e\">${pct}%</text>"
-  Y=$((Y + 24))
-  i=$((i + 1))
-done < <(echo "$LANG_RAW")
+  <line x1="52" y1="42" x2="570" y2="42" stroke="#30363d" stroke-width="0.5" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.5s" fill="freeze"/>
+  </line>
 
-HEADER_LINE='<text x="10" y="16" font-family="Courier New,monospace" font-size="9" fill="#58a6ff">┌─ LANGUAGE DISTRIBUTION ───────────────────────────────────┐</text>'
-FOOTER_LINE="<text x=\"10\" y=\"$((Y+12))\" font-family=\"Courier New,monospace\" font-size=\"9\" fill=\"#58a6ff\">└──────────────────────────────────────────────────────────┘</text>"
-SVG_H=$((Y + 24))
+  <text x="52" y="76" font-family="Courier New,monospace" font-size="32" font-weight="bold" fill="#58a6ff" opacity="0">
+    BHARATHRAJ N
+    <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="1.8s" fill="freeze"/>
+  </text>
+  <rect x="52" y="50" height="34" fill="#0d1117" width="340">
+    <animate attributeName="width" from="340" to="0" dur="1.5s" begin="0.7s" fill="freeze"/>
+  </rect>
 
-cat > assets/lang-bars.svg << SVGEOF
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 $SVG_H" width="500" height="$SVG_H">
-  <rect width="500" height="$SVG_H" fill="#0d1117" rx="6"/>
-  $HEADER_LINE
-  $BARS
-  $FOOTER_LINE
+  <rect x="392" y="52" width="4" height="30" fill="#58a6ff" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="2.2s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;1;0;0;1" dur="0.9s" begin="2.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="52" y="102" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#3fb950" opacity="0">
+    SDE @ Scrapuncle
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.6s" fill="freeze"/>
+  </text>
+  <text x="52" y="124" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#9aa4b2" opacity="0">
+    Building customer-facing &amp; internal-ops apps, plus the
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3s" fill="freeze"/>
+  </text>
+  <text x="52" y="144" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#9aa4b2" opacity="0">
+    microservice + dashboard platform powering the org's tooling.  ♥
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.2s" fill="freeze"/>
+  </text>
 </svg>
 SVGEOF
 
-# ── Ticker ──
-TICKER=$(echo "$REPOS" | jq -r '.[:10] | .[] | "\(.name)|\(.updated_at)"' | while IFS='|' read -r name updated; do
-  ts=$(to_epoch "$updated")
-  now=$(date "+%s")
-  diff=$(( (now - ts) / 3600 ))
-  if [ "$diff" -lt 1 ]; then ago="just now"
-  elif [ "$diff" -lt 24 ]; then ago="${diff}h ago"
-  else ago="$((diff/24))d ago"; fi
-  echo -n "▶ $name · $ago  │  "
-done | sed 's/  │  $//')
+# ── Systems Composition SVG (hand-curated ranking, not raw repo byte-count) ──
+cat > assets/lang-panel.svg << 'SVGEOF'
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 60" width="560" height="60">
+  <rect x="0" y="0" width="560" height="14" rx="7" fill="#161b22"/>
+  <rect x="0" y="0" width="134" height="14" rx="7" fill="#00B4AB"><animate attributeName="width" from="0" to="134" dur="0.8s" begin="0s" fill="freeze"/></rect>
+  <rect x="134" y="0" width="112" height="14" fill="#00ADD8"><animate attributeName="width" from="0" to="112" dur="0.8s" begin="0.1s" fill="freeze"/></rect>
+  <rect x="246" y="0" width="95" height="14" fill="#3178C6"><animate attributeName="width" from="0" to="95" dur="0.8s" begin="0.2s" fill="freeze"/></rect>
+  <rect x="341" y="0" width="78" height="14" fill="#7F52FF"><animate attributeName="width" from="0" to="78" dur="0.8s" begin="0.3s" fill="freeze"/></rect>
+  <rect x="419" y="0" width="62" height="14" fill="#F05138"><animate attributeName="width" from="0" to="62" dur="0.8s" begin="0.4s" fill="freeze"/></rect>
+  <rect x="481" y="0" width="50" height="14" fill="#00599C"><animate attributeName="width" from="0" to="50" dur="0.8s" begin="0.5s" fill="freeze"/></rect>
+  <rect x="531" y="0" width="29" height="14" rx="7" fill="#3776AB"><animate attributeName="width" from="0" to="29" dur="0.8s" begin="0.6s" fill="freeze"/></rect>
 
-# ── Market board ──
-MARKET=$(echo "$REPOS" | jq -r '
-  sort_by(-.stargazers_count, .updated_at) |
-  .[:8] | .[] |
-  "\(.name)|\(.language // "N/A")|\(.stargazers_count)|\(.updated_at)"
-' | while IFS='|' read -r name lang stars updated; do
-  sym="\$"$(echo "$name" | head -c 5 | tr '[:lower:]' '[:upper:]')
-  ts=$(to_epoch "$updated")
-  days=$(( ( $(date "+%s") - ts ) / 86400 ))
-  if [ "$days" -lt 30 ]; then stat="🟢"
-  elif [ "$days" -lt 180 ]; then stat="🔵"
-  else stat="🟣"; fi
-  printf "%-7s │ %-20s │ %-10s │ ★ %-3s │ ▸ 0  │ %s\n" "$sym" "${name:0:20}" "$lang" "$stars" "$stat"
-done)
+  <circle cx="8" cy="38" r="4" fill="#00B4AB"/><text x="17" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Dart</text><text x="47" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">24%</text>
+  <circle cx="90" cy="38" r="4" fill="#00ADD8"/><text x="99" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Go</text><text x="118" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">20%</text>
+  <circle cx="160" cy="38" r="4" fill="#3178C6"/><text x="169" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">TypeScript</text><text x="240" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">17%</text>
+  <circle cx="290" cy="38" r="4" fill="#7F52FF"/><text x="299" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Kotlin</text><text x="345" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">14%</text>
+  <circle cx="390" cy="38" r="4" fill="#F05138"/><text x="399" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Swift</text><text x="435" y="42" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">11%</text>
+  <circle cx="8" cy="56" r="4" fill="#00599C"/><text x="17" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">C++</text><text x="45" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">9%</text>
+  <circle cx="90" cy="56" r="4" fill="#3776AB"/><text x="99" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#e6e8eb" font-weight="600">Python</text><text x="145" y="60" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="11" fill="#6e7681">5%</text>
+</svg>
+SVGEOF
 
-# ── Kanban ──
-ACTIVE=""; STABLE=""; SHIPPED=""
-while IFS='|' read -r name lang updated; do
-  ts=$(to_epoch "$updated")
-  days=$(( ( $(date "+%s") - ts ) / 86400 ))
-  n=$(printf "%-15s" "${name:0:14}")
-  l=$(printf "%-12s" "${lang:-N/A}")
-  if [ "$days" -eq 0 ]; then dstr="today   "
-  elif [ "$days" -eq 1 ]; then dstr="1d ago  "
-  else dstr="${days}d ago  "; fi
-  card="│ ${n}│ ${l}│ ${dstr}│"
-  if [ "$days" -lt 30 ]; then
-    ACTIVE+="${card}\n"
-  elif [ "$days" -lt 180 ]; then
-    STABLE+="${card}\n"
-  else
-    SHIPPED+="${card}\n"
-  fi
-done < <(echo "$REPOS" | jq -r '.[] | "\(.name)|\(.language // "N/A")|\(.updated_at)"')
-
-# ── Generate README ──
-SYNC_TIME=$(date -u "+%d %b %Y %H:%M UTC")
-
-cat > README.md << 'HEREDOC_HEADER'
+# ── README ──
+cat > README.md << HEREDOC
 <div align="center">
 
 <picture>
@@ -132,140 +97,59 @@ cat > README.md << 'HEREDOC_HEADER'
 
 <br>
 
+<sub><b>TELEMETRY FEED</b></sub>
+
 <marquee width="88%" direction="left" scrollamount="3" scrolldelay="30">
-HEREDOC_HEADER
-
-echo "  ${TICKER}" >> README.md
-
-cat >> README.md << 'HEREDOC_BODY'
-
+  ${TICKER}
 </marquee>
 
-<br>
+---
 
-```
-🤖  Full-stack. Flutter · Go · TypeScript · Swift.
-    I build things that ship.
-```
+### How I build
+
+\`SOLID\` — \`MVVM\` — \`DRY\` — \`CQRS\` — \`ACID\` — \`CAP\`
+
+- Architecture bends to the problem, not the other way around.
+- Boundaries live where change lives — everywhere else stays simple.
+- Systems degrade gracefully; they don't go dark.
+- Visibility ships before velocity — you can't fix what you can't see.
 
 ---
 
-<details open>
-<summary><b>▸ $ code-rules</b></summary>
+### Learning Projects
 
-```
-Architecture that bends to the problem, not the other way.
-```
+Built to learn a stack, not just to ship one.
 
-</details>
-
-<details>
-<summary><b>▸ $ arch-patterns</b></summary>
-
-```
-Boundaries where change lives. Otherwise, none.
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ sys-design</b></summary>
-
-```
-Degrade. Never die. Visibility before velocity.
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ scrapuncle --work</b></summary>
-
-```
-┌────────────────┬─────────────────┬──────────────────┐
-│  CUSTOMER APP  │  OPERATIONS     │  CORE SERVICES   │
-│  Flutter/Dart  │  Flutter/Dart   │  Go / TypeScript │
-│  Consumer      │  Internal ops   │  Backend infra   │
-└────────────────┴─────────────────┴──────────────────┘
-
-▸ Full-stack ownership. Mobile to infra.
-▸ Private work — architecture gists only.
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ portfolio --show</b></summary>
-
-<br>
-
-#### 📊 MARKET
-
-```
-SYM    │ PROJECT              │ TECH        │ PRICE │ CHG  │ STAT
-───────┼──────────────────────┼─────────────┼───────┼──────┼─────
-HEREDOC_BODY
-
-echo "${MARKET}" >> README.md
-
-cat >> README.md << 'HEREDOC_KANBAN'
-```
-
-#### 📋 KANBAN
-
-```
-HEREDOC_KANBAN
-
-printf "%-44s %-44s %-44s\n" "🟢 ACTIVE" "🔵 STABLE" "🟣 SHIPPED" >> README.md
-printf "%-44s %-44s %-44s\n" "" "" "" >> README.md
-
-# Interleave ACTIVE/STABLE/SHIPPED
-IFS=$'\n' read -rd '' -a active_lines  <<< "$(echo -e "$ACTIVE")"  || true
-IFS=$'\n' read -rd '' -a stable_lines  <<< "$(echo -e "$STABLE")"  || true
-IFS=$'\n' read -rd '' -a shipped_lines <<< "$(echo -e "$SHIPPED")" || true
-
-max_len=${#active_lines[@]}
-[[ ${#stable_lines[@]} -gt $max_len ]] && max_len=${#stable_lines[@]}
-[[ ${#shipped_lines[@]} -gt $max_len ]] && max_len=${#shipped_lines[@]}
-[[ $max_len -eq 0 ]] && max_len=1
-
-for ((idx=0; idx<max_len; idx++)); do
-  a="${active_lines[$idx]:-                                              }"
-  s="${stable_lines[$idx]:-                                              }"
-  h="${shipped_lines[$idx]:-                                             }"
-  printf "%-44s %-44s %-44s\n" "$a" "$s" "$h" >> README.md
-done
-
-cat >> README.md << 'HEREDOC_FOOTER'
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ blog --queue</b></summary>
-
-```
-📝  Clean Arch in Flutter
-    ✅ domain/ isolation     ❌ boilerplate cost
-
-📝  Go Microservices
-    ✅ DI by hand            ❌ framework magic
-
-📝  Firebase: The Bait & Switch
-    ✅ week 0 prototype      ❌ week 52 lock-in
-
-📝  Flutter Perf at Scale
-    ✅ lazy everything       ❌ monolith widget tree
-
-📍  Publishing soon — Substack / blog site
-```
-
-</details>
+- **[microservices-lab](https://github.com/BharathrajN2004/microservices-lab)** — a Go microservices study project: Fiber for HTTP, gRPC for service-to-service calls, Postgres via Ent, and NATS JetStream for async messaging. Built to understand how a real microservice mesh holds together end to end, not just the theory of it.
+- **[macmonitor](https://github.com/BharathrajN2004/macmonitor)** — a native Swift macOS utility for system cleanup and monitoring. First serious dive into native macOS development outside the Flutter/Go comfort zone.
+- **[studiov-video-editor](https://github.com/BharathrajN2004/studiov-video-editor)** + **[studiov-editor-workspace](https://github.com/BharathrajN2004/studiov-editor-workspace)** — a Flutter video editor handling frame extraction, green-screen removal, and overlay compositing, paired with its companion mobile + desktop workspace app.
+- **[split-it](https://github.com/BharathrajN2004/split-it)** — a full-stack bill/expense-splitting app: Flutter frontend, Node/Express + MongoDB backend, UPI/wallet payments, group splitting.
+- **[pond-water-quality-monitor-lite](https://github.com/BharathrajN2004/pond-water-quality-monitor-lite)** — a Flutter IoT app streaming real-time pond water-quality sensor data (dissolved oxygen, pH, temperature) via Firebase Realtime Database.
+- **[student-permission-tracker](https://github.com/BharathrajN2004/student-permission-tracker)** → **[attendance-validator](https://github.com/BharathrajN2004/attendance-validator)** — an evolution story, not a single project: started as an EJS/Express/MongoDB prototype for tracking student leave-permission records, later rebuilt as a fuller React + Firebase attendance/leave validator.
+- **[event-pod](https://github.com/BharathrajN2004/event-pod)** — a Flutter app for browsing and sharing public events, with a scraping-based recommendation feature.
 
 ---
+
+### Personal Works
+
+Private, not part of the public roster above.
+
+- ✅ **nadai** — a habit tracker built in Flutter, active development.
+- 🃏 **Literature** — a cards-game project, not yet pushed to GitHub.
+- 🍳 **Cooking** — early stage, not yet pushed to GitHub.
+- 🧩 **Handler** — an adaptive organizational OS that reshapes itself around a company's structure, discipline, and principles.
+
+...and more in planning.
+
+---
+
+### Systems Composition
+
+What I reach for most, in order.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/lang-bars.svg">
-  <img src="assets/lang-bars.svg" width="500" alt="Language Distribution">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/lang-panel.svg">
+  <img src="assets/lang-panel.svg" width="560" alt="Systems Composition">
 </picture>
 
 <br>
@@ -278,22 +162,71 @@ cat >> README.md << 'HEREDOC_FOOTER'
 
 ---
 
-```
-┌─ CONNECT ──────────────────────────────────────────┐
-│                                                     │
-│      📧  bharathrajn2004@gmail.com                  │
-│      🐙  github.com/BharathrajN2004                 │
-│      💼  linkedin.com/in/bharathraj-n               │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
-HEREDOC_FOOTER
+### Tech Stack
 
-echo "" >> README.md
-echo '```' >> README.md
-echo "\$ █  [synced: ${SYNC_TIME}]" >> README.md
-echo '```' >> README.md
-echo "" >> README.md
-echo '</div>' >> README.md
+Grouped by where it ships — each tool listed once.
 
-echo "✅ Profile generated · ${COUNT} repos · ${SYNC_TIME}"
+<table>
+<tr><td align="center" width="100"><sub><b>MOBILE</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=flutter" height="28"/> <img src="https://img.shields.io/badge/React_Native-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" height="28"/> <img src="https://skillicons.dev/icons?i=kotlin" height="28"/> <img src="https://skillicons.dev/icons?i=swift" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>WEBSITE</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=react" height="28"/> <img src="https://skillicons.dev/icons?i=nextjs" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>BACKEND</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=go" height="28"/> <img src="https://skillicons.dev/icons?i=ts" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>CLOUD</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=firebase" height="28"/> <img src="https://skillicons.dev/icons?i=supabase" height="28"/> <img src="https://skillicons.dev/icons?i=gcp" height="28"/> <img src="https://skillicons.dev/icons?i=aws" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>DEVOPS</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=docker" height="28"/> <img src="https://skillicons.dev/icons?i=kubernetes" height="28"/> <img src="https://img.shields.io/badge/Helm-%230F1689.svg?style=flat-square&logo=helm&logoColor=%23FFFFFF" height="28"/> <img src="https://skillicons.dev/icons?i=terraform" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>ANALYTICS</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=grafana" height="28"/> <img src="https://img.shields.io/badge/PostHog-%23F54E00.svg?style=flat-square&logo=posthog&logoColor=%23FFFFFF" height="28"/> <img src="https://img.shields.io/badge/Mixpanel-%237856FF.svg?style=flat-square&logo=mixpanel&logoColor=%23FFFFFF" height="28"/> <img src="https://skillicons.dev/icons?i=sentry" height="28"/>
+
+</td></tr>
+</table>
+
+<details>
+<summary><b>▸ stack --verbose</b></summary>
+
+<br>
+
+**Flutter** — Riverpod • Bloc • MVVM • ObjectBox • Drift • Hive • Retrofit • Dio
+
+**Backend** — Go (Fiber) • Node.js (Express) • Bun • PostgreSQL (Ent) • MongoDB • NATS JetStream • gRPC • JWT
+
+**Frontend** — React • Next.js • Tailwind CSS • Redux Toolkit • Framer Motion • Three.js
+
+**Cloud & DevOps** — Firebase • Supabase • GCP • AWS • Docker • Kubernetes • Helm • Terraform
+
+**Observability** — Grafana • PostHog • Sentry • Mixpanel
+
+</details>
+
+---
+
+\`\`\`
+📧  bharathrajn2004@gmail.com
+🐙  github.com/BharathrajN2004
+💼  linkedin.com/in/bharathraj-n
+\`\`\`
+
+\`\$ █  [synced: ${SYNC_TIME}]\`
+
+</div>
+HEREDOC
+
+echo "✅ Profile generated · $(echo "$REPOS" | jq 'length') repos · ${SYNC_TIME}"

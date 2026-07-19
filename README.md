@@ -7,160 +7,59 @@
 
 <br>
 
-<marquee width="88%" direction="left" scrollamount="3" scrolldelay="30">
-  ▶ admin-dashboard · 3h ago  │  ▶ BharathrajN2004 · 5h ago  │  ▶ su-payment-management · 1d ago  │  ▶ new_picker_app · 2d ago  │  ▶ React.3.InqubateQRAdmin · 2d ago  │  ▶ Flutter.4.DomainExpertiser · 2d ago  │  ▶ Flutter.2.1.ExpenseTracker · 2d ago  │  ▶ Tauri.React.Flutter.Al-ML...1.Decoder · 2d ago  │  ▶ React.Flutter.1.Handler · 2d ago  │  ▶ Flutter.IOT.Node.1.WomenSafety · 2d ago
+<sub><b>TELEMETRY FEED</b></sub>
 
+<marquee width="88%" direction="left" scrollamount="3" scrolldelay="30">
+  ▶ microservices-lab  │  ▶ BharathrajN2004  │  ▶ inventory-qr-manager  │  ▶ aqi-wqi-monitor  │  ▶ pond-water-quality-monitor-lite  │  ▶ decoder-app-platform  │  ▶ expense-tracker-bewise  │  ▶ event-pod  │  ▶ student-permission-tracker  │  ▶ attendance-validator
 </marquee>
 
-<br>
+---
 
-```
-🤖  Full-stack. Flutter · Go · TypeScript · Swift.
-    I build things that ship.
-```
+### How I build
+
+`SOLID` — `MVVM` — `DRY` — `CQRS` — `ACID` — `CAP`
+
+- Architecture bends to the problem, not the other way around.
+- Boundaries live where change lives — everywhere else stays simple.
+- Systems degrade gracefully; they don't go dark.
+- Visibility ships before velocity — you can't fix what you can't see.
 
 ---
 
-<details open>
-<summary><b>▸ $ code-rules</b></summary>
+### Learning Projects
 
-```
-Architecture that bends to the problem, not the other way.
-```
+Built to learn a stack, not just to ship one.
 
-</details>
-
-<details>
-<summary><b>▸ $ arch-patterns</b></summary>
-
-```
-Boundaries where change lives. Otherwise, none.
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ sys-design</b></summary>
-
-```
-Degrade. Never die. Visibility before velocity.
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ scrapuncle --work</b></summary>
-
-```
-┌────────────────┬─────────────────┬──────────────────┐
-│  CUSTOMER APP  │  OPERATIONS     │  CORE SERVICES   │
-│  Flutter/Dart  │  Flutter/Dart   │  Go / TypeScript │
-│  Consumer      │  Internal ops   │  Backend infra   │
-└────────────────┴─────────────────┴──────────────────┘
-
-▸ Full-stack ownership. Mobile to infra.
-▸ Private work — architecture gists only.
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ portfolio --show</b></summary>
-
-<br>
-
-#### 📊 MARKET
-
-```
-SYM    │ PROJECT              │ TECH        │ PRICE │ CHG  │ STAT
-───────┼──────────────────────┼─────────────┼───────┼──────┼─────
-$FLUTT  │ Flutter.12.RedHat_Ad │ Dart       │ ★ 2   │ ▸ 0  │ 🟣
-$NADAI  │ nadai_app            │ Dart       │ ★ 1   │ ▸ 0  │ 🔵
-$FLUTT  │ Flutter.7.BatteryInd │ Dart       │ ★ 0   │ ▸ 0  │ 🟣
-$QUANT  │ Quantathon_1.0       │ JavaScript │ ★ 0   │ ▸ 0  │ 🟣
-$MISSI  │ Mission_O2           │ Dart       │ ★ 0   │ ▸ 0  │ 🟣
-$SIH_2  │ SIH_2024             │ TypeScript │ ★ 0   │ ▸ 0  │ 🟣
-$POND-  │ pond-quality-server  │ JavaScript │ ★ 0   │ ▸ 0  │ 🟣
-$PLAYP  │ PlayPal              │ C++        │ ★ 0   │ ▸ 0  │ 🟣
-```
-
-#### 📋 KANBAN
-
-```
-🟢 ACTIVE                                  🔵 STABLE                                  🟣 SHIPPED                                
-                                                                                                                                      
-│ admin-dashboar │ TypeScript  │ today   │ │ scrapuncle_das │ TypeScript  │ 32d ago  │ │ psqlToFirebase │ JavaScript  │ 192d ago  │
-│ BharathrajN200 │ Shell       │ today   │ │ su-backend     │ Go          │ 37d ago  │ │ su-user-fronte │ TypeScript  │ 252d ago  │
-│ su-payment-man │ TypeScript  │ 1d ago  │ │ nadai_app      │ Dart        │ 45d ago  │ │ coupon-managem │ TypeScript  │ 272d ago  │
-│ new_picker_app │ Dart        │ 2d ago  │ │ me             │ TypeScript  │ 53d ago  │ │ scrapuncle_adm │ TypeScript  │ 310d ago  │
-│ React.3.Inquba │ JavaScript  │ 2d ago  │ │ coupon-dashboa │ TypeScript  │ 79d ago  │ │ su-communicati │ JavaScript  │ 311d ago  │
-│ Flutter.4.Doma │ N/A         │ 2d ago  │ │ Scrap_Bot      │ Python      │ 80d ago  │ │ speech-to-text │ Python      │ 332d ago  │
-│ Flutter.2.1.Ex │ N/A         │ 2d ago  │ │ Flutter.14.spl │ Dart        │ 104d ago  │ │ SU_Campaign    │ JavaScript  │ 351d ago  │
-│ Tauri.React.Fl │ N/A         │ 2d ago  │ │ TShirt_logo_de │ Python      │ 108d ago  │ │ cupon_assign_m │ Jupyter Notebook│ 351d ago  │
-│ React.Flutter. │ N/A         │ 2d ago  │ │ Weighing-Machi │ Python      │ 114d ago  │ │ Nodejs_metaFor │ JavaScript  │ 361d ago  │
-│ Flutter.IOT.No │ N/A         │ 2d ago  │ │ Anomaly_Detect │ Jupyter Notebook│ 115d ago  │ │ Summary_Model  │ Jupyter Notebook│ 369d ago  │
-│ custom_bottom_ │ N/A         │ 2d ago  │ │ su-scripts     │ Python      │ 138d ago  │ │ Gemini_Weight_ │ Jupyter Notebook│ 371d ago  │
-│ LiveInLab-Deco │ JavaScript  │ 2d ago  │ │ redirect       │ TypeScript  │ 143d ago  │ │ User_Chatbot   │ Python      │ 372d ago  │
-│ KH002_Splitit  │ Dart        │ 2d ago  │ │ su-communicati │ TypeScript  │ 157d ago  │ │ Object_Detect_ │ Python      │ 379d ago  │
-│ Flutter.12.Red │ Dart        │ 2d ago  │ │ docs           │ JavaScript  │ 170d ago  │ │ picker_app     │ Dart        │ 386d ago  │
-│ Flutter-Webina │ Dart        │ 2d ago  │ │ Psql_to_fireba │ JavaScript  │ 170d ago  │ │ Image_Classify │ Jupyter Notebook│ 387d ago  │
-│ user_managemen │ Dart        │ 2d ago  │                                                │ whatsappWorker │ JavaScript  │ 394d ago  │
-│ StudioV_video_ │ Dart        │ 2d ago  │                                                │ interakt_api   │ TypeScript  │ 397d ago  │
-│ Microservice_v │ Go          │ 2d ago  │                                                │ Address_To_Coo │ N/A         │ 399d ago  │
-│ EJS.1.TeacherV │ EJS         │ 2d ago  │                                                │ Flutter.12.Red │ Dart        │ 402d ago  │
-│ React.2.Domain │ JavaScript  │ 2d ago  │                                                │ consumer_app   │ Dart        │ 408d ago  │
-│ React.1.Teache │ JavaScript  │ 2d ago  │                                                │ awsLambda      │ JavaScript  │ 409d ago  │
-│ student_projec │ Dart        │ 2d ago  │                                                │ firebase_rpick │ JavaScript  │ 409d ago  │
-│ nutpam24       │ JavaScript  │ 2d ago  │                                                │ routes         │ Python      │ 431d ago  │
-│ Dopeshield     │ Dart        │ 2d ago  │                                                │ ws             │ JavaScript  │ 441d ago  │
-│ SIH_avalanche_ │ JavaScript  │ 2d ago  │                                                │ scrapuncle_war │ Dart        │ 449d ago  │
-│ Flutter.11.Dro │ N/A         │ 2d ago  │                                                │ ORION_server   │ Go          │ 465d ago  │
-│ Flutter.10.SIH │ C++         │ 2d ago  │                                                │ ORION_Bun_serv │ TypeScript  │ 471d ago  │
-│ Flutter.9.IC_S │ Dart        │ 2d ago  │                                                │ exotel_to_noti │ Python      │ 475d ago  │
-│ Flutter.8.Phot │ C++         │ 2d ago  │                                                │ prisma_to_fire │ TypeScript  │ 486d ago  │
-│ Flutter.6.2.Sp │ Dart        │ 2d ago  │                                                │ scrapuncle_flu │ C++         │ 492d ago  │
-│ Flutter.6.Spla │ Dart        │ 2d ago  │                                                │ ORION_user     │ Dart        │ 517d ago  │
-│ Flutter.5.Inve │ C++         │ 2d ago  │                                                │ TEDx-SIT       │ TypeScript  │ 527d ago  │
-│ Flutter.3.Even │ Dart        │ 2d ago  │                                                │ Flutter.15.Stu │ Dart        │ 592d ago  │
-│ Flutter.2.2.Ex │ Dart        │ 2d ago  │                                                │ Flutter.13.Piw │ C++         │ 645d ago  │
-│ warehouse_app  │ Dart        │ 3d ago  │                                                │ FindWho        │ C++         │ 651d ago  │
-│ Scrapuncle_CS_ │ Dart        │ 4d ago  │                                                │ PlayPal        │ C++         │ 662d ago  │
-│ scrapuncle-loc │ TypeScript  │ 5d ago  │                                                │ pond-quality-s │ JavaScript  │ 675d ago  │
-│ new_consumer_a │ Dart        │ 7d ago  │                                                │ SIH_2024       │ TypeScript  │ 684d ago  │
-│ Scrapuncle_dia │ Dart        │ 16d ago  │                                                │ Mission_O2     │ Dart        │ 779d ago  │
-│ macmonitor     │ Swift       │ 24d ago  │                                                │ Quantathon_1.0 │ JavaScript  │ 1065d ago  │
-│ scrapuncle-pic │ TypeScript  │ 25d ago  │                                                │ Flutter.7.Batt │ Dart        │ 1099d ago  │
-│ ScrapUncle-Mic │ Go          │ 25d ago  │                                                                                             
-```
-
-</details>
-
-<details>
-<summary><b>▸ $ blog --queue</b></summary>
-
-```
-📝  Clean Arch in Flutter
-    ✅ domain/ isolation     ❌ boilerplate cost
-
-📝  Go Microservices
-    ✅ DI by hand            ❌ framework magic
-
-📝  Firebase: The Bait & Switch
-    ✅ week 0 prototype      ❌ week 52 lock-in
-
-📝  Flutter Perf at Scale
-    ✅ lazy everything       ❌ monolith widget tree
-
-📍  Publishing soon — Substack / blog site
-```
-
-</details>
+- **[microservices-lab](https://github.com/BharathrajN2004/microservices-lab)** — a Go microservices study project: Fiber for HTTP, gRPC for service-to-service calls, Postgres via Ent, and NATS JetStream for async messaging. Built to understand how a real microservice mesh holds together end to end, not just the theory of it.
+- **[macmonitor](https://github.com/BharathrajN2004/macmonitor)** — a native Swift macOS utility for system cleanup and monitoring. First serious dive into native macOS development outside the Flutter/Go comfort zone.
+- **[studiov-video-editor](https://github.com/BharathrajN2004/studiov-video-editor)** + **[studiov-editor-workspace](https://github.com/BharathrajN2004/studiov-editor-workspace)** — a Flutter video editor handling frame extraction, green-screen removal, and overlay compositing, paired with its companion mobile + desktop workspace app.
+- **[split-it](https://github.com/BharathrajN2004/split-it)** — a full-stack bill/expense-splitting app: Flutter frontend, Node/Express + MongoDB backend, UPI/wallet payments, group splitting.
+- **[pond-water-quality-monitor-lite](https://github.com/BharathrajN2004/pond-water-quality-monitor-lite)** — a Flutter IoT app streaming real-time pond water-quality sensor data (dissolved oxygen, pH, temperature) via Firebase Realtime Database.
+- **[student-permission-tracker](https://github.com/BharathrajN2004/student-permission-tracker)** → **[attendance-validator](https://github.com/BharathrajN2004/attendance-validator)** — an evolution story, not a single project: started as an EJS/Express/MongoDB prototype for tracking student leave-permission records, later rebuilt as a fuller React + Firebase attendance/leave validator.
+- **[event-pod](https://github.com/BharathrajN2004/event-pod)** — a Flutter app for browsing and sharing public events, with a scraping-based recommendation feature.
 
 ---
+
+### Personal Works
+
+Private, not part of the public roster above.
+
+- ✅ **nadai** — a habit tracker built in Flutter, active development.
+- 🃏 **Literature** — a cards-game project, not yet pushed to GitHub.
+- 🍳 **Cooking** — early stage, not yet pushed to GitHub.
+- 🧩 **Handler** — an adaptive organizational OS that reshapes itself around a company's structure, discipline, and principles.
+
+...and more in planning.
+
+---
+
+### Systems Composition
+
+What I reach for most, in order.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/lang-bars.svg">
-  <img src="assets/lang-bars.svg" width="500" alt="Language Distribution">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/lang-panel.svg">
+  <img src="assets/lang-panel.svg" width="560" alt="Systems Composition">
 </picture>
 
 <br>
@@ -173,18 +72,68 @@ $PLAYP  │ PlayPal              │ C++        │ ★ 0   │ ▸ 0  │ 🟣
 
 ---
 
-```
-┌─ CONNECT ──────────────────────────────────────────┐
-│                                                     │
-│      📧  bharathrajn2004@gmail.com                  │
-│      🐙  github.com/BharathrajN2004                 │
-│      💼  linkedin.com/in/bharathraj-n               │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
+### Tech Stack
+
+Grouped by where it ships — each tool listed once.
+
+<table>
+<tr><td align="center" width="100"><sub><b>MOBILE</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=flutter" height="28"/> <img src="https://img.shields.io/badge/React_Native-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" height="28"/> <img src="https://skillicons.dev/icons?i=kotlin" height="28"/> <img src="https://skillicons.dev/icons?i=swift" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>WEBSITE</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=react" height="28"/> <img src="https://skillicons.dev/icons?i=nextjs" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>BACKEND</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=go" height="28"/> <img src="https://skillicons.dev/icons?i=ts" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>CLOUD</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=firebase" height="28"/> <img src="https://skillicons.dev/icons?i=supabase" height="28"/> <img src="https://skillicons.dev/icons?i=gcp" height="28"/> <img src="https://skillicons.dev/icons?i=aws" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>DEVOPS</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=docker" height="28"/> <img src="https://skillicons.dev/icons?i=kubernetes" height="28"/> <img src="https://img.shields.io/badge/Helm-%230F1689.svg?style=flat-square&logo=helm&logoColor=%23FFFFFF" height="28"/> <img src="https://skillicons.dev/icons?i=terraform" height="28"/>
+
+</td></tr>
+<tr><td align="center"><sub><b>ANALYTICS</b></sub></td><td>
+
+<img src="https://skillicons.dev/icons?i=grafana" height="28"/> <img src="https://img.shields.io/badge/PostHog-%23F54E00.svg?style=flat-square&logo=posthog&logoColor=%23FFFFFF" height="28"/> <img src="https://img.shields.io/badge/Mixpanel-%237856FF.svg?style=flat-square&logo=mixpanel&logoColor=%23FFFFFF" height="28"/> <img src="https://skillicons.dev/icons?i=sentry" height="28"/>
+
+</td></tr>
+</table>
+
+<details>
+<summary><b>▸ stack --verbose</b></summary>
+
+<br>
+
+**Flutter** — Riverpod • Bloc • MVVM • ObjectBox • Drift • Hive • Retrofit • Dio
+
+**Backend** — Go (Fiber) • Node.js (Express) • Bun • PostgreSQL (Ent) • MongoDB • NATS JetStream • gRPC • JWT
+
+**Frontend** — React • Next.js • Tailwind CSS • Redux Toolkit • Framer Motion • Three.js
+
+**Cloud & DevOps** — Firebase • Supabase • GCP • AWS • Docker • Kubernetes • Helm • Terraform
+
+**Observability** — Grafana • PostHog • Sentry • Mixpanel
+
+</details>
+
+---
 
 ```
-$ █  [synced: 18 Jul 2026 13:18 UTC]
+📧  bharathrajn2004@gmail.com
+🐙  github.com/BharathrajN2004
+💼  linkedin.com/in/bharathraj-n
 ```
+
+`$ █  [synced: 19 Jul 2026]`
 
 </div>

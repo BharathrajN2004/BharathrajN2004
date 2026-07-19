@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 88">
-  <rect width="580" height="88" fill="#0d1117" rx="6"/>
-  
-  <!-- User icon -->
-  <g transform="translate(16,20)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 168" width="620" height="168">
+  <rect width="620" height="168" fill="#0d1117" rx="6"/>
+
+  <g transform="translate(18,22)">
     <circle cx="12" cy="10" r="7" fill="none" stroke="#58a6ff" stroke-width="1.5">
       <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0s" fill="freeze"/>
     </circle>
@@ -11,41 +10,38 @@
     </path>
   </g>
 
-  <!-- Hostname -->
-  <text x="50" y="32" font-family="Courier New,monospace" font-size="10" fill="#8b949e" opacity="0">
+  <text x="52" y="34" font-family="Courier New,monospace" font-size="12" fill="#8b949e" opacity="0">
     BharathrajN2004@github
     <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.3s" fill="freeze"/>
   </text>
 
-  <!-- Dividers -->
-  <line x1="50" y1="38" x2="530" y2="38" stroke="#30363d" stroke-width="0.5" opacity="0">
+  <line x1="52" y1="42" x2="570" y2="42" stroke="#30363d" stroke-width="0.5" opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.5s" fill="freeze"/>
   </line>
 
-  <!-- Name reveal via cover -->
-  <text x="50" y="62" font-family="Courier New,monospace" font-size="22" font-weight="bold" fill="#58a6ff" opacity="0">
+  <text x="52" y="76" font-family="Courier New,monospace" font-size="32" font-weight="bold" fill="#58a6ff" opacity="0">
     BHARATHRAJ N
     <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="1.8s" fill="freeze"/>
   </text>
-  <rect x="50" y="42" height="24" fill="#0d1117" width="280">
-    <animate attributeName="width" from="280" to="0" dur="1.5s" begin="0.7s" fill="freeze"/>
+  <rect x="52" y="50" height="34" fill="#0d1117" width="340">
+    <animate attributeName="width" from="340" to="0" dur="1.5s" begin="0.7s" fill="freeze"/>
   </rect>
 
-  <!-- Cursor -->
-  <rect x="325" y="43" width="3" height="22" fill="#58a6ff" opacity="0">
+  <rect x="392" y="52" width="4" height="30" fill="#58a6ff" opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.01s" begin="2.2s" fill="freeze"/>
     <animate attributeName="opacity" values="1;1;0;0;1" dur="0.9s" begin="2.5s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Subtitle -->
-  <text x="50" y="82" font-family="Courier New,monospace" font-size="9" fill="#8b949e" opacity="0">
-    Full-Stack Engineer · Flutter / Go / TypeScript / Swift
-    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="2.5s" fill="freeze"/>
+  <text x="52" y="102" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#3fb950" opacity="0">
+    SDE @ Scrapuncle
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.6s" fill="freeze"/>
   </text>
-
-  <!-- Shell prompt bottom -->
-  <text x="50" y="15" font-family="Courier New,monospace" font-size="8" fill="#3fb950" opacity="0">
-    ● DevTerminal v2.4
-    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3s" fill="freeze"/>
+  <text x="52" y="124" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#9aa4b2" opacity="0">
+    Building customer-facing &amp; internal-ops apps, plus the
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3s" fill="freeze"/>
+  </text>
+  <text x="52" y="144" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" fill="#9aa4b2" opacity="0">
+    microservice + dashboard platform powering the org's tooling.  ♥
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.2s" fill="freeze"/>
   </text>
 </svg>
