@@ -47,7 +47,6 @@ Private, not part of the public roster above.
 
 - ✅ **nadai** — a habit tracker built in Flutter, active development.
 - 🃏 **Literature** — a cards-game project, not yet pushed to GitHub.
-- 🍳 **Cooking** — early stage, not yet pushed to GitHub.
 - 🧩 **Handler** — an adaptive organizational OS that reshapes itself around a company's structure, discipline, and principles.
 
 ...and more in planning.
