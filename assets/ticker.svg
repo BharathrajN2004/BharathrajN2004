@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 32" width="560" height="32">
   <rect width="560" height="32" fill="#0d1117"/>
   <text x="560" y="22" font-family="Courier New,monospace" font-size="16" fill="#8b949e">
-    ▶ admin-dashboard  │  ▶ BharathrajN2004  │  ▶ su-payment-management  │  ▶ ScrapUncle-Microservice  │  ▶ Scrapuncle_CS_app  │  ▶ literature-app  │  ▶ literature-server  │  ▶ microservices-lab  │  ▶ inventory-qr-manager  │  ▶ aqi-wqi-monitor
+    ▶ BharathrajN2004  │  ▶ admin-dashboard  │  ▶ su-payment-management  │  ▶ ScrapUncle-Microservice  │  ▶ Scrapuncle_CS_app  │  ▶ literature-app  │  ▶ literature-server  │  ▶ microservices-lab  │  ▶ inventory-qr-manager  │  ▶ aqi-wqi-monitor
     <animate attributeName="x" from="560" to="-1600" dur="26s" repeatCount="indefinite"/>
   </text>
 </svg>
